@@ -1,81 +1,36 @@
+let listaStory=[
+  {imgStory:"assets/img/9gag.svg", nomeUsuario:"9gag"},
+  {imgStory:"assets/img/meowed.svg", nomeUsuario:"meowed"},
+  {imgStory:"assets/img/barked.svg", nomeUsuario:"barked"},
+  {imgStory:"assets/img/nathanwpylestrangeplanet.svg", nomeUsuario:"nathanwpylestrangeplanet"},
+  {imgStory:"assets/img/wawawicomics.svg", nomeUsuario:"wawawicomics"},
+  {imgStory:"assets/img/respondeai.svg", nomeUsuario:"respondeai"},
+  {imgStory:"assets/img/filomoderna.svg", nomeUsuario:"filomoderna"},
+  {imgStory:"assets/img/memeriagourmet.svg", nomeUsuario:"memeriagourmet"}
+  ]
+
+function Story(props){
+  return(
+    <div className="story">
+      <div className="imagem">
+        <img src={props.imgStory} alt={props.nomeUsuario}/>
+      </div>
+      <div className="usuario">
+        {props.nomeUsuario}
+      </div>
+    </div>
+  );
+}
+
 export default function Stories(){
     return(
-      <div class="stories">
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/9gag.svg" alt="9gag"/>
+      <div className="stories">
+        {listaStory.map((i)=> (
+          <Story key={i.nomeUsuario} imgStory={i.imgStory}  nomeUsuario={i.nomeUsuario} />
+          ))}
+        <div className="setinha">
+          <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
-        <div class="usuario">
-          9gag
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/meowed.svg" alt="meowed"/>
-        </div>
-        <div class="usuario">
-          meowed
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/barked.svg" alt="barked"/>
-        </div>
-        <div class="usuario">
-          barked
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/nathanwpylestrangeplanet.svg" alt="nathanwpylestrangeplanet"/>
-        </div>
-        <div class="usuario">
-          nathanwpylestrangeplanet
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/wawawicomics.svg" alt="wawawicomics"/>
-        </div>
-        <div class="usuario">
-          wawawicomics
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/respondeai.svg" alt="respondeai"/>
-        </div>
-        <div class="usuario">
-          respondeai
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/filomoderna.svg" alt="filomoderna"/>
-        </div>
-        <div class="usuario">
-          filomoderna
-        </div>
-      </div>
-  
-      <div class="story">
-        <div class="imagem">
-          <img src="assets/img/memeriagourmet.svg" alt="memeriagourmet"/>
-        </div>
-        <div class="usuario">
-          memeriagourmet
-        </div>
-      </div>
-  
-      <div class="setinha">
-        <ion-icon name="chevron-forward-circle"></ion-icon>
-      </div>
     </div>
     );
   }
